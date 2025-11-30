@@ -1,23 +1,68 @@
-
 {
-  "name": "typetomamun/laravel-event-guard",
-  "description": "Event-based multi-role permission system",
-  "type": "library",
-  "license": "MIT",
-  "autoload": {
-    "psr-4": {
-      "EventGuard\\": "src/"
-    }
-  },
-  "authors": [
-    {
-      "name": "Mamun",
-      "email": "typetomamun@gmail.com"
-    }
-  ],
-  "minimum-stability": "stable",
-  "require": {
-    "php": ">=8.2",
-    "illuminate/support": "^12.0"
-  }
+    "name": "typetomamun/laravel-event-guard",
+    "description": "Multi-tenant permission and role management for Laravel applications. Manage permissions for multiple shops, forums, groups, and more.",
+    "keywords": [
+        "laravel",
+        "permissions",
+        "roles",
+        "acl",
+        "multi-tenant",
+        "eventguard",
+        "authorization",
+        "access-control",
+        "rbac"
+    ],
+    "homepage": "https://github.com/typetomamun/laravel-event-guard",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "TypeToMamun",
+            "email": "your-email@example.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2|^8.3",
+        "illuminate/support": "^11.0|^12.0",
+        "illuminate/database": "^11.0|^12.0",
+        "illuminate/contracts": "^11.0|^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0",
+        "phpunit/phpunit": "^11.0",
+        "mockery/mockery": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "TypeToMamun\\LaravelEventGuard\\": "src/"
+        },
+        "files": [
+            "src/Helpers/egd_helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TypeToMamun\\LaravelEventGuard\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TypeToMamun\\LaravelEventGuard\\EGDServiceProvider"
+            ],
+            "aliases": {
+                "EventGuard": "TypeToMamun\\LaravelEventGuard\\Facades\\EventGuard"
+            }
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
