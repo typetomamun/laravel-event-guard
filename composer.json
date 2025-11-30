@@ -1,0 +1,23 @@
+
+{
+  "name": "typetomamun/laravel-event-guard",
+  "description": "Event-based multi-role permission system",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "EventGuard\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Mamun",
+      "email": "typetomamun@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=8.2",
+    "illuminate/support": "^12.0"
+  }
+}
